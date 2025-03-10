@@ -1,3 +1,6 @@
-# Descriptive Statistics 2025
-## Robert Gosz, Natalia Bohatkiewicz 
+TEAM LEADER: Robert Gosz
+COLLABORATOR: Natalia Bohatkiewcz
+
+# Reports:
+
 
