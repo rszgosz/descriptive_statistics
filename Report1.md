@@ -21,158 +21,79 @@ from dfply import *
 cars >> head(3)
 ```
 
-    Matplotlib is building the font cache; this may take a moment.
-    
 
 
-    ---------------------------------------------------------------------------
 
-    gaierror                                  Traceback (most recent call last)
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-    File c:\Users\bonat\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1348, in AbstractHTTPHandler.do_open(self, http_class, req, **http_conn_args)
-       1347 try:
-    -> 1348     h.request(req.get_method(), req.selector, req.data, headers,
-       1349               encode_chunked=req.has_header('Transfer-encoding'))
-       1350 except OSError as err: # timeout error
-    
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-    File c:\Users\bonat\AppData\Local\Programs\Python\Python310\lib\http\client.py:1282, in HTTPConnection.request(self, method, url, body, headers, encode_chunked)
-       1281 """Send a complete request to the server."""
-    -> 1282 self._send_request(method, url, body, headers, encode_chunked)
-    
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.0</td>
+      <td>8</td>
+      <td>307.0</td>
+      <td>130.0</td>
+      <td>3504</td>
+      <td>12.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>chevrolet chevelle malibu</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>15.0</td>
+      <td>8</td>
+      <td>350.0</td>
+      <td>165.0</td>
+      <td>3693</td>
+      <td>11.5</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>buick skylark 320</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>18.0</td>
+      <td>8</td>
+      <td>318.0</td>
+      <td>150.0</td>
+      <td>3436</td>
+      <td>11.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>plymouth satellite</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
-    File c:\Users\bonat\AppData\Local\Programs\Python\Python310\lib\http\client.py:1328, in HTTPConnection._send_request(self, method, url, body, headers, encode_chunked)
-       1327     body = _encode(body, 'body')
-    -> 1328 self.endheaders(body, encode_chunked=encode_chunked)
-    
-
-    File c:\Users\bonat\AppData\Local\Programs\Python\Python310\lib\http\client.py:1277, in HTTPConnection.endheaders(self, message_body, encode_chunked)
-       1276     raise CannotSendHeader()
-    -> 1277 self._send_output(message_body, encode_chunked=encode_chunked)
-    
-
-    File c:\Users\bonat\AppData\Local\Programs\Python\Python310\lib\http\client.py:1037, in HTTPConnection._send_output(self, message_body, encode_chunked)
-       1036 del self._buffer[:]
-    -> 1037 self.send(msg)
-       1039 if message_body is not None:
-       1040 
-       1041     # create a consistent interface to message_body
-    
-
-    File c:\Users\bonat\AppData\Local\Programs\Python\Python310\lib\http\client.py:975, in HTTPConnection.send(self, data)
-        974 if self.auto_open:
-    --> 975     self.connect()
-        976 else:
-    
-
-    File c:\Users\bonat\AppData\Local\Programs\Python\Python310\lib\http\client.py:1447, in HTTPSConnection.connect(self)
-       1445 "Connect to a host on a given (SSL) port."
-    -> 1447 super().connect()
-       1449 if self._tunnel_host:
-    
-
-    File c:\Users\bonat\AppData\Local\Programs\Python\Python310\lib\http\client.py:941, in HTTPConnection.connect(self)
-        940 sys.audit("http.client.connect", self, self.host, self.port)
-    --> 941 self.sock = self._create_connection(
-        942     (self.host,self.port), self.timeout, self.source_address)
-        943 # Might fail in OSs that don't implement TCP_NODELAY
-    
-
-    File c:\Users\bonat\AppData\Local\Programs\Python\Python310\lib\socket.py:824, in create_connection(address, timeout, source_address)
-        823 err = None
-    --> 824 for res in getaddrinfo(host, port, 0, SOCK_STREAM):
-        825     af, socktype, proto, canonname, sa = res
-    
-
-    File c:\Users\bonat\AppData\Local\Programs\Python\Python310\lib\socket.py:955, in getaddrinfo(host, port, family, type, proto, flags)
-        954 addrlist = []
-    --> 955 for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
-        956     af, socktype, proto, canonname, sa = res
-    
-
-    gaierror: [Errno 11001] getaddrinfo failed
-
-    
-    During handling of the above exception, another exception occurred:
-    
-
-    URLError                                  Traceback (most recent call last)
-
-    Cell In[2], line 3
-          1 import pandas as pd
-          2 import seaborn as sns
-    ----> 3 cars = sns.load_dataset('mpg')
-          4 from dfply import *
-          5 cars >> head(3)
-    
-
-    File c:\Users\bonat\AppData\Local\Programs\Python\Python310\lib\site-packages\seaborn\utils.py:572, in load_dataset(name, cache, data_home, **kws)
-        570 cache_path = os.path.join(get_data_home(data_home), os.path.basename(url))
-        571 if not os.path.exists(cache_path):
-    --> 572     if name not in get_dataset_names():
-        573         raise ValueError(f"'{name}' is not one of the example datasets.")
-        574     urlretrieve(url, cache_path)
-    
-
-    File c:\Users\bonat\AppData\Local\Programs\Python\Python310\lib\site-packages\seaborn\utils.py:499, in get_dataset_names()
-        493 def get_dataset_names():
-        494     """Report available example datasets, useful for reporting issues.
-        495 
-        496     Requires an internet connection.
-        497 
-        498     """
-    --> 499     with urlopen(DATASET_NAMES_URL) as resp:
-        500         txt = resp.read()
-        502     dataset_names = [name.strip() for name in txt.decode().split("\n")]
-    
-
-    File c:\Users\bonat\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:216, in urlopen(url, data, timeout, cafile, capath, cadefault, context)
-        214 else:
-        215     opener = _opener
-    --> 216 return opener.open(url, data, timeout)
-    
-
-    File c:\Users\bonat\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:519, in OpenerDirector.open(self, fullurl, data, timeout)
-        516     req = meth(req)
-        518 sys.audit('urllib.Request', req.full_url, req.data, req.headers, req.get_method())
-    --> 519 response = self._open(req, data)
-        521 # post-process response
-        522 meth_name = protocol+"_response"
-    
-
-    File c:\Users\bonat\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:536, in OpenerDirector._open(self, req, data)
-        533     return result
-        535 protocol = req.type
-    --> 536 result = self._call_chain(self.handle_open, protocol, protocol +
-        537                           '_open', req)
-        538 if result:
-        539     return result
-    
-
-    File c:\Users\bonat\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:496, in OpenerDirector._call_chain(self, chain, kind, meth_name, *args)
-        494 for handler in handlers:
-        495     func = getattr(handler, meth_name)
-    --> 496     result = func(*args)
-        497     if result is not None:
-        498         return result
-    
-
-    File c:\Users\bonat\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1391, in HTTPSHandler.https_open(self, req)
-       1390 def https_open(self, req):
-    -> 1391     return self.do_open(http.client.HTTPSConnection, req,
-       1392         context=self._context, check_hostname=self._check_hostname)
-    
-
-    File c:\Users\bonat\AppData\Local\Programs\Python\Python310\lib\urllib\request.py:1351, in AbstractHTTPHandler.do_open(self, http_class, req, **http_conn_args)
-       1348         h.request(req.get_method(), req.selector, req.data, headers,
-       1349                   encode_chunked=req.has_header('Transfer-encoding'))
-       1350     except OSError as err: # timeout error
-    -> 1351         raise URLError(err)
-       1352     r = h.getresponse()
-       1353 except:
-    
-
-    URLError: <urlopen error [Errno 11001] getaddrinfo failed>
 
 
 ## The \>\> and \>\>=
@@ -193,15 +114,50 @@ cars >> select(X.mpg,X.horsepower) >> head(3)
 ```
 
 
-    ---------------------------------------------------------------------------
 
-    NameError                                 Traceback (most recent call last)
 
-    Cell In[1], line 1
-    ----> 1 cars >> select(X.mpg,X.horsepower) >> head(3)
-    
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-    NameError: name 'cars' is not defined
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>horsepower</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.0</td>
+      <td>130.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>15.0</td>
+      <td>165.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>18.0</td>
+      <td>150.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
 
 
 ## Selecting and dropping
@@ -308,18 +264,6 @@ Select the columns that contain the substring "e" from the cars DataFrame.
 ```python
 cars >> select(contains("e"))>>head(3)
 ```
-
-
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    Cell In[1], line 1
-    ----> 1 cars >> select(contains("e"))>>head(3)
-    
-
-    NameError: name 'cars' is not defined
-
 
 ### Exercise 6.
 
