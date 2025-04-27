@@ -4,6 +4,7 @@ COLLABORATOR: Natalia Bohatkiewcz
 # Reports:
 [Report 1](Report1/Report1.md)<br>
 [Report 2](Report2/Report2.md)<br>
+[Report 3 - data cleansing](Report2/Exercise4.md)<br>
 
 
 
