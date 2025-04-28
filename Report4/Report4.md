@@ -970,11 +970,35 @@ How would you make a histogram showing the distribution of `population` values i
 ### Your code here
 sns.histplot(data = df_gapminder[df_gapminder['year'] == 2007], x = 'population', stat = "probability", alpha = .6);
 plt.show()
+df_gapminder_2007=df_gapminder[df_gapminder['year']==2007]
+df_gapminder_2007['norm_population']=np.log10(df_gapminder_2007['population'])
+sns.histplot(data=df_gapminder_2007, x='norm_population', stat='probability', alpha = .6, bins=40)
 ```
 
 
     
 ![png](Exercise6_files/Exercise6_20_0.png)
+    
+
+
+    C:\Users\robert\AppData\Local\Temp\ipykernel_20016\2244613446.py:5: SettingWithCopyWarning: 
+    A value is trying to be set on a copy of a slice from a DataFrame.
+    Try using .loc[row_indexer,col_indexer] = value instead
+    
+    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+      df_gapminder_2007['norm_population']=np.log10(df_gapminder_2007['population'])
+    
+
+
+
+
+    <Axes: xlabel='norm_population', ylabel='Probability'>
+
+
+
+
+    
+![png](Exercise6_files/Exercise6_20_3.png)
     
 
 
