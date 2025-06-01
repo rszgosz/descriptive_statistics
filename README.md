@@ -8,6 +8,7 @@ COLLABORATOR: Natalia Bohatkiewcz
 [Report 4 - data visualisation](Report4/Report4.md)<br>
 [Report 5 - Univariate Analysis](Report5/Exercise8.md)<br>
 [Report 6 - Bivariate Analysis](Report6/Exercise9.md)<br>
-
+[Report 7 - Multivariate Analysis](Report7/Exercise10.md)<br>
+[additional report](add_report/mulitvariate_analysys.md)<br>
 
 
