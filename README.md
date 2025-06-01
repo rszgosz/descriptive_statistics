@@ -6,7 +6,8 @@ COLLABORATOR: Natalia Bohatkiewcz
 [Report 2](Report2/Report2.md)<br>
 [Report 3 - data cleansing](Report2/Exercise4.md)<br>
 [Report 4 - data visualisation](Report4/Report4.md)<br>
-[Reoirt 5 - Univariate Analysis](Report5/Exercise8.md)<br>
+[Report 5 - Univariate Analysis](Report5/Exercise8.md)<br>
+[Report 6 - Bivariate Analysis](Report6/Exercise9.md)<br>
 
 
 
